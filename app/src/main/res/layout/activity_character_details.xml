@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="marvelCharacter"
+            type="com.example.marvel_comic.data.dao.model.MarvelCharacter" />
+        <variable
+            name="isBookmarked"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_margin="2dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/character_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/character_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            app:layout_constraintStart_toStartOf="@id/character_image"
+            app:layout_constraintTop_toBottomOf="@+id/character_image"
+            android:text="@{marvelCharacter.name}"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/bookmarkButton"
+            android:layout_width="22dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="30dp"
+            android:button="@drawable/ic_bookmark"
+            android:checked="@{isBookmarked}"
+            android:paddingHorizontal="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/character_name"
+            app:layout_constraintTop_toTopOf="@id/character_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:useMaterialThemeColors="false" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout></layout>
