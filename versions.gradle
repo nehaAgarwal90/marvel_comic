@@ -1,0 +1,166 @@
+ext.sdkVersions = [:]
+
+def sdkVersions = [:]
+sdkVersions.compileSdkVersion = 31
+sdkVersions.buildToolsVersion = "30.0.3"
+sdkVersions.minSdkVersion = 23
+sdkVersions.targetSdkVersion = 31
+ext.sdkVersions = sdkVersions
+
+
+ext.deps = [:]
+
+def versions = [:]
+versions.gradle_plugin = '4.2.1'
+versions.kotlin_version = '1.5.21'
+versions.appcompat = '1.3.0'
+versions.google_material = '1.3.0'
+versions.constraintlayout = '2.0.4'
+versions.androidx_legacy = '1.0.0'
+
+versions.core_ktx = '1.5.0'
+versions.activity = "1.2.3"
+versions.fragment = "1.3.4"
+versions.room = "2.3.0"
+versions.collection = "1.1.0"
+versions.navigation = "2.4.0-alpha01"
+
+versions.dagger = "2.43.2"
+versions.dagger_android = "2.43.2"
+versions.hilt = "2.43.2"
+
+versions.retrofit = "2.9.0"
+versions.okhttp = "4.9.0"
+versions.chucker = "3.4.0"
+
+versions.room = "2.3.0"
+
+versions.coroutine = "1.3.9"
+
+versions.glide = "4.12.0"
+
+versions.paging = "3.0.0"
+
+versions.junit = '4.13.2'
+versions.ext_junit = '1.1.2'
+versions.espresso_core = '3.3.0'
+versions.kotest = '4.6.1'
+versions.mockk = '1.12.0'
+versions.coroutines_test = '1.5.1'
+versions.mockk_jvm = '1.12.0'
+
+versions.shimmer = '0.5.0@aar'
+
+versions.exoplayer= '2.14.1'
+versions.fcmBom= '28.3.1'
+versions.workmanager='2.4.0'
+
+versions.hyper_sdk = '2.0.2-rc.46'
+versions.circular_progress='2.0.0'
+versions.location_api='18.0.0'
+versions.lottieVersion = "4.2.1"
+
+def deps = [:]
+
+//Gradle plugin.
+deps.gradle_plugin = "com.android.tools.build:gradle:4.2.1"
+
+//Kotlin
+def kotlin = [:]
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin_version"
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin_version"
+kotlin.kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin_version"
+deps.kotlin = kotlin
+
+//Android support libraries.
+def android_support = [:]
+android_support.appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
+android_support.material = "com.google.android.material:material:$versions.google_material"
+android_support.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+android_support.androidx_legacy = "androidx.legacy:legacy-support-v4:$versions.androidx_legacy"
+deps.android_support = android_support
+
+//Android KTX
+def android_ktx = [:]
+android_ktx.core = "androidx.core:core-ktx:$versions.core_ktx"
+android_ktx.activity = "androidx.activity:activity-ktx:$versions.activity"
+android_ktx.fragment = "androidx.fragment:fragment-ktx:$versions.fragment"
+android_ktx.room = "androidx.room:room-ktx:$versions.room"
+android_ktx.collection = "androidx.collection:collection-ktx:$versions.collection"
+android_ktx.navigation = "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
+android_ktx.navigation_fragment = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+android_ktx.navigation_ui = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+deps.android_ktx = android_ktx
+
+//Dagger
+def dagger = [:]
+
+dagger.hilt = "com.google.dagger:hilt-android:$versions.hilt"
+dagger.hilt_plugin = "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
+dagger.hilt_compiler = "com.google.dagger:hilt-compiler:$versions.hilt"
+dagger.hilt_test = "com.google.dagger:hilt-android-testing:$versions.hilt"
+dagger.hilt_test_compiler = "com.google.dagger:hilt-compiler:$versions.hilt"
+
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger_android"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger_android"
+dagger.android_processor = "com.google.dagger:dagger-android-processor:$versions.dagger_android"
+
+deps.dagger = dagger
+
+//Retrofit
+deps.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+deps.retrofit_gson_convertor = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+
+//OkHttp
+def okhttp = [:]
+okhttp.runtime = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+okhttp.logger = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+okhttp.mockserver = "com.squareup.okhttp3:mockwebserver:$versions.okhttp"
+deps.okhttp = okhttp
+
+//chuck
+deps.chucker = "com.github.chuckerteam.chucker:library:$versions.chucker"
+deps.chucker_no_op = "com.github.chuckerteam.chucker:library-no-op:$versions.chucker"
+
+//Room
+deps.room = "androidx.room:room-runtime:$versions.room"
+deps.room_compiler = "androidx.room:room-compiler:$versions.room"
+
+//Coroutine
+deps.coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
+
+//Glide
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+deps.glide_kapt = "com.github.bumptech.glide:compiler:$versions.glide"
+
+//Paging
+deps.paging = "androidx.paging:paging-runtime:$versions.paging"
+
+//Unit Test
+deps.junit = "junit:junit:$versions.junit"
+deps.junit_ext = "androidx.test.ext:junit:$versions.ext_junit"
+deps.espresso_core = "androidx.test.espresso:espresso-core:$versions.espresso_core"
+
+deps.kotest = "io.kotest:kotest-runner-junit5:$versions.kotest"
+deps.kotest_assertion = "io.kotest:kotest-assertions-core:$versions.kotest"
+deps.kotest_property = "io.kotest:kotest-property:$versions.kotest"
+deps.mockk = "io.mockk:mockk:$versions.mockk"
+deps.coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines_test"
+deps.kotlin_test = "org.jetbrains.kotlin:kotlin-test:$versions.kotlin_version"
+deps.mockk_jvm = "io.mockk:mockk-agent-jvm:$versions.mockk_jvm"
+
+deps.shimmer = "com.facebook.shimmer:shimmer:$versions.shimmer"
+
+deps.hyper_sdk = "in.juspay:hypersdk:$versions.hyper_sdk"
+
+//exoplayer
+deps.exoplayer = "com.google.android.exoplayer:exoplayer:$versions.exoplayer"
+deps.fcmBoM=  "com.google.firebase:firebase-bom:$versions.fcmBom"
+deps.fcmmsg ="com.google.firebase:firebase-messaging-ktx"
+deps.workmanager="androidx.work:work-runtime:$versions.workmanager"
+deps.circular_progress="com.github.guilhe:circular-progress-view:$versions.circular_progress"
+deps.location_api="com.google.android.gms:play-services-location:$versions.location_api"
+
+ext.deps = deps

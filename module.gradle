@@ -1,0 +1,115 @@
+android {
+    compileSdkVersion sdkVersions.compileSdkVersion
+    buildToolsVersion sdkVersions.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion sdkVersions.minSdkVersion
+        targetSdkVersion sdkVersions.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("Boolean", "IS_IN_DEBUG_MODE", "true")
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField("Boolean", "IS_IN_DEBUG_MODE", "false")
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    kapt {
+        correctErrorTypes = true
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
+
+    android {
+        lintOptions {
+            disable "DialogFragmentCallbacksDetector"
+            abortOnError false
+        }
+    }
+}
+
+dependencies {
+    //Android support libraries.
+    implementation deps.android_support.appcompat
+    implementation deps.android_support.material
+    implementation deps.android_support.constraintlayout
+    implementation deps.android_support.androidx_legacy
+
+    //Android KTX
+    implementation deps.android_ktx.core
+    implementation deps.android_ktx.activity
+    implementation deps.android_ktx.fragment
+    implementation deps.android_ktx.room
+    implementation deps.android_ktx.collection
+    implementation deps.android_ktx.navigation
+    implementation deps.android_ktx.navigation_fragment
+    implementation deps.android_ktx.navigation_ui
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    //Kotlin
+    implementation deps.kotlin.stdlib
+    implementation deps.kotlin.kotlin_reflect
+
+    //Dagger
+    implementation deps.dagger.hilt
+    kapt deps.dagger.hilt_compiler
+    testImplementation deps.dagger.hilt_test
+    kaptTest deps.dagger.hilt_test_compiler
+
+    //Glide
+    implementation deps.glide
+    kapt deps.glide_kapt
+
+    implementation deps.paging
+
+    //Retrofit
+    implementation deps.retrofit
+    implementation deps.retrofit_gson_convertor
+
+    //OkHttp client
+    implementation deps.okhttp.runtime
+    implementation deps.okhttp.logger
+    testImplementation deps.okhttp.mockserver
+
+    implementation deps.coroutine
+
+    testImplementation deps.kotest
+    testImplementation deps.kotest_assertion
+    testImplementation deps.kotest_property
+    testImplementation deps.mockk
+    testImplementation deps.coroutines_test
+    testImplementation deps.kotlin_test
+    testImplementation deps.mockk_jvm
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
+    implementation "androidx.navigation:navigation-compose:2.5.0"
+
+
+
+    // Import the BoM for the Firebase platform
+    implementation platform(deps.fcmBoM)
+    implementation deps.fcmmsg
+    implementation deps.workmanager
+
+    implementation deps.circular_progress
+    implementation deps.location_api
+}

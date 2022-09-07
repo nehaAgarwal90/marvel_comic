@@ -1,0 +1,16 @@
+apply from: rootProject.file('module.gradle')
+
+android {
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    testImplementation deps.junit
+    androidTestImplementation deps.junit_ext
+    androidTestImplementation deps.espresso_core
+
+    implementation deps.room
+    kapt deps.room_compiler
+}
