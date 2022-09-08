@@ -64,13 +64,12 @@ class CharactersList : AppCompatActivity() {
 
     private fun setPostGridAdapter() {
         adapter.onItemClick = {
-//            val transaction = this.supportFragmentManager.beginTransaction()
-//            transaction.add(containerId, MarvelCharacterDetailFragment::class.java, null, null)
-//                .addToBackStack(null).commit()
-//            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
         }
             binding.rvPosts.adapter = adapter
+    }
 
+    fun showCharacter(character: MarvelCharacter) {
+//        startActivity(CharacterDetails.newIntent(this, character))
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {

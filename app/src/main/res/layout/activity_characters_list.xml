@@ -19,10 +19,9 @@
             android:id="@+id/filter_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/background_drawable"
             android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp" />
+           android:padding="10dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_posts"

@@ -25,8 +25,8 @@ class MarvelCharacterGridViewAdapter @Inject constructor(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: MarvelCharacter, context: Context) {
             binding.apply {
-                marvelCharacter = model
-                Glide.with(context).load(model.imageURL).into(characterImage)
+                character = model
+                Glide.with(context).load(model.imageURL).into(image)
                 isBookmarked = true
                 executePendingBindings()
             }
