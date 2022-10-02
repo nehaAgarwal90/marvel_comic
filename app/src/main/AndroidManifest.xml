@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.marvel_comic">
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    package="com.example.color_palette">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:usesCleartextTraffic="true"
-        android:name=".MarvelApplication"
+        android:name="com.example.color_palette.ColorPaletteApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".presentation.activity.CharactersList"
+            android:name="com.example.color_palette.presentation.activity.PalettePickerActivity"
             android:exported="true"
-            android:label="@string/title_activity_characters_list"
             android:theme="@style/Theme.Marvel_comic.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.color_palette.presentation.activity.ColorInfoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Marvel_comic.NoActionBar"/>
     </application>
 
 </manifest>

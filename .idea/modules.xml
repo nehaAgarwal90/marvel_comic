@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/marvel_comic.iml" filepath="$PROJECT_DIR$/.idea/modules/marvel_comic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/marvel_comic.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/marvel_comic.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/marvel_comic.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/marvel_comic.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/marvel_comic.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/marvel_comic.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/marvel_comic.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/marvel_comic.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>
