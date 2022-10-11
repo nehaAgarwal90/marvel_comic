@@ -1,3 +1,6 @@
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme  
 # Track events
 
 The SDK provides three event tracking APIs to log events for reporting, segmentation, and various other data collection use cases:
