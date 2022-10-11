@@ -1,15 +1,12 @@
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-- jekyll-remote-theme  
 # Track events
 
-The SDK provides three event tracking APIs to log events for reporting, segmentation, and various other data collection use cases:
+The SDK provides four event tracking APIs to log events for reporting User action events
 
-1. [Send events to Edge Network](initialize-the-sdk.md#send-events-to-edge-network) \(requires Edge Network extension\)
+1. [User Sign Up](initialize-the-sdk.md#user-sign-up) 
 2. [Track user actions](initialize-the-sdk.md#track-user-actions) \(requires Adobe Analytics extension\)
 3. [Track app states and screens](initialize-the-sdk.md#track-app-states-and-screens) \(requires Adobe Analytics extension\)
 
-## Send events to Edge Network
+## User Sign Up
 
 {% hint style="info" %}
 This step requires knowledge of Experience Data Model \(XDM\) in Adobe Experience Platform. For more information about XDM, please read the [XDM documentation](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html).
